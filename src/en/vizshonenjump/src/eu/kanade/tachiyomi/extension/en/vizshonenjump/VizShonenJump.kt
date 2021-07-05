@@ -46,7 +46,7 @@ class VizShonenJump : ParsedHttpSource() {
         .addInterceptor(::authCheckIntercept)
         .addInterceptor(::authChapterCheckIntercept)
         .addInterceptor(VizImageInterceptor())
-        .addInterceptor(RateLimitInterceptor(1, 1, TimeUnit.SECONDS))
+        .addInterceptor(RateLimitInterceptor(5, 5, TimeUnit.SECONDS))
         .build()
 
     override fun headersBuilder(): Headers.Builder = Headers.Builder()
